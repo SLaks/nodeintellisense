@@ -2,7 +2,7 @@
 /// <reference path="./events.js"/>
 /// <reference path="./stream.js"/>
 
-require.modules.process = function () {
+function Process() {
     /// <summary>
     /// The process object is a global object and can be accessed from anywhere. It is an instance of EventEmitter.
     /// </summary>
@@ -181,6 +181,4 @@ require.modules.process = function () {
     };
 };
 
-require.modules.process.prototype = new require.modules.events.EventEmitter();
-
-require.modules.process = new require.modules.process();
+Process.prototype = new require.modules.events.EventEmitter();
